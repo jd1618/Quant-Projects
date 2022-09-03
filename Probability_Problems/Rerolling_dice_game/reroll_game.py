@@ -36,10 +36,11 @@ def reroll_game(dice,n):
 
 # Generate a list representing a dice with sides 1 to 6
 dice=[x for x in range(1,7)]
+simulations=int(input("Enter the number of simulation: "))
 total=0
 
 # Perform Monte Carlo simulations
-for _ in range(1000):
+for _ in range(simulations):
     total+=reroll_game(dice,0)
 
-print(total/1000)
+print(total/simulations)
