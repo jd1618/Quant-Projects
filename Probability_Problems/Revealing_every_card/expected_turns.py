@@ -5,7 +5,7 @@ def expected_turns(deck):
     count,turns=0,0
     cards_seen=set()
     while count<len(deck):
-        if deck[0] not in hashset:
+        if deck[0] not in cards_seen:
             cards_seen.add(deck[0])
             count+=1
         shuffle(deck)
