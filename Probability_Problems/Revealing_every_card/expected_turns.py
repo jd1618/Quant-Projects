@@ -3,10 +3,10 @@ from random import shuffle
 
 def expected_turns(deck):
     count,turns=0,0
-    hashset=set()
+    cards_seen=set()
     while count<len(deck):
         if deck[0] not in hashset:
-            hashset.add(deck[0])
+            cards_seen.add(deck[0])
             count+=1
         shuffle(deck)
         turns+=1
