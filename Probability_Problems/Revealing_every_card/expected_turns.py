@@ -2,6 +2,16 @@
 from random import shuffle
 
 def expected_turns(deck):
+    '''
+    A function that given a deck of cards, where each card is distinct, 
+    returns the expected number of times you need to turn over the top
+    card, record what it is, put the card back in the deck, shuffle
+    and repeat this procedure in order to see every card in the deck.
+    
+    count - keeps track of the number of new cards you have seen,
+    turns - keeps track of the number of turns you play this game, 
+    cards_seen - records the cards you have seen.
+    '''
     count,turns=0,0
     cards_seen=set()
     while count<len(deck):
