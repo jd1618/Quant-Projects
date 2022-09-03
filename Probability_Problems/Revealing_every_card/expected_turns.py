@@ -22,8 +22,11 @@ def expected_turns(deck):
         turns+=1
     return turns
 
+# Setting up the problem
 deck=[x for x in range(input("Enter the size of the deck of cards: "))]
 average_turns,simulations=0,int(input("Enter the number of simulations: "))
+
+# Performing Monte Carlo simulations
 for _ in range(simulations):
     average_turns+=expected_turns(deck)
 average_turns/=simulations
