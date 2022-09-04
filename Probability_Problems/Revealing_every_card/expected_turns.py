@@ -26,21 +26,21 @@ def expected_turns(deck):
 # Setting up the problem with exceptions
 while True:
     try:
-    n=input("Enter the number of cards in the deck: ")
-    n=int(n)
-    break
+        n=input("Enter the number of cards in the deck: ")
+        n=int(n)
+        break
     except ValueError:
-    print("Not a valid input for the number of cards! "
-    +"Please try again ...")
+        print("Not a valid input for the number of cards! "
+        +"Please try again ...")
 
 while True:
     try:
-    sims=input("Enter the number of simulations: ")
-    sims=int(sims)
-    break
+        sims=input("Enter the number of simulations: ")
+        sims=int(sims)
+        break
     except ValueError:
-    print("Not a valid input for the number of simulations! "
-    +"Please try again ...")
+        print("Not a valid input for the number of simulations! "
+        +"Please try again ...")
 avg_turns,deck=0,[x for x in range(n)]
 
 # Performing Monte Carlo simulations
