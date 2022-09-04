@@ -23,10 +23,10 @@ def reroll_game(dice,n):
           if num<expect:
               lesser_frequency+=1
           elif num>=expect:
-              tmp+=num
+              greater_sum+=num
       expect=(lesser_frequency/len(dice))*expect
       +greater_sum/len(dice)
-      p,tmp=0,0
+      lesser_frequency,greater_sum=0,0
 
   for _ in range(n+1):
       shuffle(dice)
@@ -37,10 +37,11 @@ def reroll_game(dice,n):
 # Generate a list representing a dice with sides 1 to 6
 dice=[x for x in range(1,7)]
 simulations=int(input("Enter the number of simulation: "))
+n=int(input("Enter the number of re-reolls: "))
 total=0
 
 # Perform Monte Carlo simulations
 for _ in range(simulations):
-    total+=reroll_game(dice,0)
+    total+=reroll_game(dice,n)
 
 print(total/simulations)
