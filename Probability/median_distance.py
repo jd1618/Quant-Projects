@@ -3,6 +3,13 @@ from math import pi
 from math import sqrt
 
 def shortest_distance(n):
+    
+    '''
+    A function that given an integer 'n', generates n uniformly 
+    distributed points in the unit sphere and returns the point
+    with the shortest distance from the origin.
+    '''
+    
     shortest_dist=-1
     for _ in range(n):
         # Spherical coordinates
@@ -24,6 +31,13 @@ def shortest_distance(n):
     return shortest_dist
 
 def median_distance(n,sims):
+    
+    '''
+    A function that given positive integers 'n' and 'sims
+    recursively calls the function 'shortest_distance' and
+    returns the median of the outcomes.
+    '''
+    
     shortest_distances=[]
     for _ in range(sims):
         shortest_distances.append(shortest_distance(n))
