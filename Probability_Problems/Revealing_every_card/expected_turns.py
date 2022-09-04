@@ -12,7 +12,7 @@ def expected_turns(deck):
     # Keep track of cards seen and turns taken
     count,turns=0,0
 
-    # Record any new cards 
+    # Record any new cards
     cards_seen=set()
 
     while count<len(deck):
@@ -25,20 +25,20 @@ def expected_turns(deck):
 
 # Setting up the problem with exceptions
 while True:
-  try:
+    try:
     n=input("Enter the number of cards in the deck: ")
     n=int(n)
     break
-  except ValueError:
+    except ValueError:
     print("Not a valid input for the number of cards! "
     +"Please try again ...")
 
 while True:
-  try:
+    try:
     sims=input("Enter the number of simulations: ")
     sims=int(sims)
     break
-  except ValueError:
+    except ValueError:
     print("Not a valid input for the number of simulations! "
     +"Please try again ...")
 avg_turns,deck=0,[x for x in range(n)]
