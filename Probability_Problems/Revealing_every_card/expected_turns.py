@@ -41,6 +41,8 @@ while True:
     except ValueError:
         print("Not a valid input for the number of simulations! "
         +"Please try again ...")
+        
+# Initialise average turns taken and deck        
 avg_turns,deck=0,[x for x in range(n)]
 
 # Performing Monte Carlo simulations
