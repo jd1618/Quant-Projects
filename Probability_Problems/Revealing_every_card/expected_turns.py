@@ -5,11 +5,14 @@ def expected_turns(deck):
 
     '''
     A function that given a list of distinct positive integers 'deck'
-    returns the expected number of times you need to rearrange the list 
+    returns the expected number of times you need to rearrange the list
     and observe the first entry until you have seen every element.
     '''
 
+    # Keep track of cards seen and turns taken
     count,turns=0,0
+
+    # Record any new cards 
     cards_seen=set()
 
     while count<len(deck):
