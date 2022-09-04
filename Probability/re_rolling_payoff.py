@@ -1,7 +1,7 @@
 # Import shuffle to generate random dice roll
 from random import shuffle
 
-def rerolling_payoff(dice,n):
+def re_rolling_payoff(dice,n):
 
   '''
   A function that given a list of positive integers 'dice' as
@@ -10,13 +10,13 @@ def rerolling_payoff(dice,n):
   to repeat this process up to n times.
   '''
 
-  # Expectation for a dice game without rerolling
+  # Expectation for a dice game without re-rolling
   expect,best=sum(dice)/len(dice),max(dice)
 
   # Define temporary variables p and tmp
   p,tmp=0,0
 
-  # Loop to generate expectation depending on rerolls
+  # Loop to generate expectation depending on re-rolls
   for _ in range(n):
       for num in dice:
           if num<expect:
@@ -56,6 +56,6 @@ while True:
 # Perform Monte Carlo simulations
 total,dice=0,[x for x in range(1,7)]
 for _ in range(sims):
-    total+=rerolling_payoff(dice,n)
+    total+=re_rolling_payoff(dice,n)
     
 print(total/sims)
