@@ -4,18 +4,14 @@ from random import shuffle
 def reroll_game(dice,n):
 
   '''
-  A function that given a list of positive integers as input,
-  and a positive integer n, returns a random list entry,
-  where you are given the option, but not the requirement, 
-  to repeat this process up to n times 
-
-  expect - expected value of the game,
-  p - the number of integers less than expect,
-  tmp - the sum of numbers greater than expect
+  A function that given a list of positive integers 'dice' as
+  input, and a positive integer 'n', returns a random list entry,
+  where you are given the option, but not the requirement,
+  to repeat this process up to n times. 
   '''
 
   # Expectation for a dice game without rerolling
-  expect=sum(dice)/len(dice)
+  expect,best=sum(dice)/len(dice),max(dice)
 
   # Define temporary variables p and tmp
   p,tmp=0,0
@@ -40,14 +36,25 @@ def reroll_game(dice,n):
   return dice[0]
 
 # Input number of re-rolls and simulations
-n=int(input("Enter the number of re-rolls: "))
-simulations=int(input("Enter the number of simulations: "))
+while True:
+  try:
+    n=input("Enter the number of re-rolls: ")
+    n=int(n)
+    break
+  except ValueError:
+    print("Not a valid input for re-rolls! Please try again ...")
 
+while True:
+  try:
+    sims=input("Enter the number of simulations: ")
+    sims=int(sims)
+    break
+  except ValueError:
+    print("Not a valid input for the number of simulations! "
+    +"Please try again ...")
 
 # Perform Monte Carlo simulations
 total,dice=0,[x for x in range(1,7)]
-for _ in range(simulations):
+for _ in range(sims):
     total+=reroll_game(dice,n)
-
-print(total/simulations)
-
+print(total/sims)
