@@ -25,7 +25,7 @@ def reroll_game(dice,n):
               tmp+=num
       expect=(p/len(dice))*expect+(tmp/len(dice))
 
-      # Reset the game to recalculate expectation
+      # Reset the game to re-calculate expectation
       p,tmp=0,0
 
   # Proceed to play the game
