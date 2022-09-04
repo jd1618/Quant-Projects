@@ -1,7 +1,7 @@
 # Import shuffle to generate random dice roll
 from random import shuffle
 
-def reroll_game(dice,n):
+def rerolling_payoff(dice,n):
 
   '''
   A function that given a list of positive integers 'dice' as
@@ -56,6 +56,6 @@ while True:
 # Perform Monte Carlo simulations
 total,dice=0,[x for x in range(1,7)]
 for _ in range(sims):
-    total+=reroll_game(dice,n)
+    total+=rerolling_payoff(dice,n)
     
 print(total/sims)
