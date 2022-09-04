@@ -1,6 +1,6 @@
 from random import shuffle
 
-def consecutive_heads(n):
+def no_consecutive_heads(n):
     toss=0
     outcomes=[1,-1]
     for _ in range(n):
@@ -32,6 +32,6 @@ while True:
 
 total=0
 for _ in range(sims):
-    total+=consecutive_heads(n)
+    total+=no_consecutive_heads(n)
 
 print(total/sims)
