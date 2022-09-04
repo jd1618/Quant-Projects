@@ -57,4 +57,5 @@ while True:
 total,dice=0,[x for x in range(1,7)]
 for _ in range(sims):
     total+=reroll_game(dice,n)
+    
 print(total/sims)
